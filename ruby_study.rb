@@ -52,13 +52,56 @@
 
 # p 0x10
 
-a = if true
-  1
+# a = if true
+#   1
+# end
+
+# p a
+
+# a = 1 if true
+# p a
+# a = 2 if false
+# p 2
+
+# def func a, b
+#   a + yield(b, 3)
+# end
+
+# p func(1, 2){|x, y| x + y }
+
+# proc = Proc.new{|x| p x}
+# proc.call(1)
+
+class Foo
+    def initialize(a)
+        @a = a
+    end
+
+    def method1
+        @a
+    end
 end
 
-p a
+class FooExt < Foo
+    def initialize(a, b)
+        @b = b
+        super a
+    end
+    
+    def method2(c)
+        @a + @b  + c
+    end
+end
 
-a = 1 if true
-p a
-a = 2 if false
-p 2
+foo1 = Foo.new(1)
+foo2 = Foo.new(2)
+
+p foo1.method1
+p foo2.method1
+
+p Foo.ancestors
+p foo2.instance_variables
+
+fooExt = FooExt.new(3, 4)
+p fooExt.method1
+p fooExt.method2(5)
