@@ -72,36 +72,91 @@
 # proc = Proc.new{|x| p x}
 # proc.call(1)
 
-class Foo
-    def initialize(a)
-        @a = a
-    end
+# class Foo
+#     def initialize(a)
+#         @a = a
+#     end
 
-    def method1
-        @a
+#     def method1
+#         @a
+#     end
+# end
+
+# class FooExt < Foo
+#     def initialize(a, b)
+#         @b = b
+#         super a
+#     end
+
+#     def method2(c)
+#         @a + @b  + c
+#     end
+# end
+
+# foo1 = Foo.new(1)
+# foo2 = Foo.new(2)
+
+# p foo1.method1
+# p foo2.method1
+
+# p Foo.ancestors
+# p foo2.instance_variables
+
+# fooExt = FooExt.new(3, 4)
+# p fooExt.method1
+# p fooExt.method2(5)
+
+# case 1
+# when 1 then
+#     p 1
+# end
+
+# a = 10
+# b = case a
+# when 1 then
+#     1
+# else
+#     2
+# end
+
+# p b
+
+# case 5
+# when 1..5 then
+#     p 1
+# else
+#     p 2
+# end
+
+# class Foo
+#     def initialize
+#         @hoge = 1
+#     end
+# end
+
+# f = Foo.new
+# p f.instance_variable_set(:@hoge, 2)
+# p f.instance_variable_get(:@hoge)
+
+# class Bar
+#     def method_missing(name, *args)
+#         puts name
+#     end
+# end
+
+# b = Bar.new
+# p b.hoge
+
+
+a = 1.2
+p a.to_s
+
+class Hoge
+    def initialize
+        @foo = "bar"
     end
 end
 
-class FooExt < Foo
-    def initialize(a, b)
-        @b = b
-        super a
-    end
-    
-    def method2(c)
-        @a + @b  + c
-    end
-end
-
-foo1 = Foo.new(1)
-foo2 = Foo.new(2)
-
-p foo1.method1
-p foo2.method1
-
-p Foo.ancestors
-p foo2.instance_variables
-
-fooExt = FooExt.new(3, 4)
-p fooExt.method1
-p fooExt.method2(5)
+hoge = Hoge.new
+p hoge.to_s
+p hoge.inspect
