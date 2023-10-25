@@ -148,15 +148,23 @@
 # p b.hoge
 
 
-a = 1.2
-p a.to_s
+# a = 1.2
+# p a.to_s
 
-class Hoge
-    def initialize
-        @foo = "bar"
-    end
-end
+# class Hoge
+#     def initialize
+#         @foo = "bar"
+#     end
+# end
 
-hoge = Hoge.new
-p hoge.to_s
-p hoge.inspect
+# hoge = Hoge.new
+# p hoge.to_s
+# p hoge.inspect
+
+# p 1.9.ceil #切り上げ
+# p 1.9.floor #切り捨て
+# p 1.4.round #四捨五入の数値をラインにして近い方の整数を表示
+# p 2.1.truncate #小数点を切った数値の表示
+# p -2.abs #絶対値
+
+p 2.step(10, 3){|n| p n } #なぜ最後に最初の数値がでるん？
