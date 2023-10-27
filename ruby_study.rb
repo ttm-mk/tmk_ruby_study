@@ -169,6 +169,17 @@
 
 # p 2.step(10, 3){|n| p n } #なぜ最後に最初の数値がでるん？
 
-sum = 0
-p 10.times {|n| sum += n }
-p sum
+# sum = 0
+# 10.times {|n| sum += n }
+# p sum
+
+# sum = 0
+# 2.downto(0) {|n| sum += n }
+# p sum
+
+# p 5.pred
+
+p a = Rational(1, 2)
+
+p Rational(1, 2).divmod Rational(1, 3)
+p Rational(-4, 13).abs
