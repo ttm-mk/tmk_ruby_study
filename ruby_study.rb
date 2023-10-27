@@ -167,7 +167,7 @@
 # p 2.1.truncate #小数点を切った数値の表示
 # p -2.abs #絶対値
 
-# p 2.step(10, 3){|n| p n } #なぜ最後に最初の数値がでるん？
+# p 2.step(10, 3){|n| puts n } #なぜ最後に最初の数値がでるん？
 
 # sum = 0
 # 10.times {|n| sum += n }
@@ -179,7 +179,15 @@
 
 # p 5.pred
 
-p a = Rational(1, 2)
+# p a = Rational(1, 2)
 
-p Rational(1, 2).divmod Rational(1, 3)
-p Rational(-4, 13).abs
+# p Rational(1, 2).divmod Rational(1, 3)
+# p Rational(-4, 13).abs
+
+# p Complex(1, 3).abs
+
+p Encoding.compatible?(Encoding::UTF_8, Encoding::Shift_JIS)
+
+a = "るびー"
+b = a.encode("EUS-JP")
+p a + b
