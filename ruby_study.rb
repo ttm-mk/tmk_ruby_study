@@ -186,8 +186,27 @@
 
 # p Complex(1, 3).abs
 
-p Encoding.compatible?(Encoding::UTF_8, Encoding::Shift_JIS)
+# p Encoding.compatible?(Encoding::UTF_8, Encoding::Shift_JIS)
+
+# a = "るびー"
+# b = a.encode("EUS-JP")
+# p a + b
+
+# a = "abc"
+# b = "あいう".encode("EUC-JP")
+# p a.encoding
+# p b.encoding
+# p (a + b).encoding
+
+# p "aa" < "b" #右が大きいとtrue
+# p "b" <=> "aa" #左が大きいとtrue?
+
+a = "abc"
+b = a.encode("EUC-JP")
+p b.encoding
+p a == b
 
 a = "るびー"
-b = a.encode("EUS-JP")
-p a + b
+b = a.encode("EUC-JP")
+p b.encoding
+p a == b
