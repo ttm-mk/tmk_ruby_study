@@ -201,12 +201,38 @@
 # p "aa" < "b" #右が大きいとtrue
 # p "b" <=> "aa" #左が大きいとtrue?
 
-a = "abc"
-b = a.encode("EUC-JP")
-p b.encoding
-p a == b
+# a = "abc"
+# b = a.encode("EUC-JP")
+# p b.encoding
+# p a == b
 
-a = "るびー"
-b = a.encode("EUC-JP")
-p b.encoding
-p a == b
+# a = "るびー"
+# b = a.encode("EUC-JP")
+# p b.encoding
+# p a == b
+
+# p 'abcd'[0]
+# a = 'aria'
+# p a.slice(2)
+# p a
+
+# a = 'abcdefg'
+# p a.slice!(1..4)
+# p a
+
+# p 'abcdefg'[3, 0]
+
+# a = "aria"
+# # p a[1..3] = "lice"
+# # p a
+# a[1, 3] = "lice"
+# p a
+
+# a = 'abcde-abcdefg'
+# p a.sub!('abc', 'aiu')
+# p a
+# p a.gsub!(/abc/, 'eok')
+# p a
+
+a = 'abcdefg-abcdefg'
+p a.sub(/abc/) {|str| 'aiu'}
