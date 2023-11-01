@@ -234,5 +234,40 @@
 # p a.gsub!(/abc/, 'eok')
 # p a
 
-a = 'abcdefg-abcdefg'
-p a.sub(/abc/) {|str| 'aiu'}
+# a = 'abcdefg-abcdefg'
+# p a.sub(/abc/) {|str| 'aiu'}
+
+# a = 'aabbccddeeff'
+# p a.tr_s!('a-c', 'A-C')
+# p a.tr_s('d-f', 'D-F')
+
+# a = 'aabbccddeeffgg'
+# p a.delete('a-f', 'd-g')
+# p a.squeeze('a-g')
+
+# a = 'aria'
+# p a.replace('alice')
+# p a
+
+# a = 'bump'
+# p a.object_id
+# p a += 'of'
+# p a.object_id
+# p a.concat('chicken')
+# p a.object_id
+
+# p a.capitalize!
+# p a.upcase
+# p a.upcase.downcase
+# p a.swapcase
+
+# a = "\vabcdef\n"
+# p a.rstrip!
+# p a.chop.reverse
+# p a.count('a-d')
+# p a.empty?
+# p a.bytesize
+
+a = "BumpOfChicken"
+p a.center(21, "★")
+p a.center(21, "-")
