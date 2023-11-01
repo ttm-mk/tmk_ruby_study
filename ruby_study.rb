@@ -268,6 +268,22 @@
 # p a.empty?
 # p a.bytesize
 
-a = "BumpOfChicken"
-p a.center(21, "★")
-p a.center(21, "-")
+# a = "BumpOfChicken"
+# p a.center(21, "★")
+# p a.center(21, "-")
+
+# a = "abc\tdef\tghi\n"
+# puts a.dump
+
+# '440r440T4408'.unpack('m')
+# a = '440r440T4408'.unpack('m').first
+# p a
+# p a.force_encoding('UTF-8')
+
+# p 'abcdefg'.scan(/[c-g]/)
+
+"abc\ndef\nghi".each_line {|c| puts c}
+
+"abc".each_byte {|c| puts c}
+
+"ルビー".each_char {|c| puts c}
