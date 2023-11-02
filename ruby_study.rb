@@ -282,8 +282,41 @@
 
 # p 'abcdefg'.scan(/[c-g]/)
 
-"abc\ndef\nghi".each_line {|c| puts c}
+# "abc\ndef\nghi".each_line {|c| puts c}
 
-"abc".each_byte {|c| puts c}
+# "abc".each_byte {|c| puts c}
 
-"ルビー".each_char {|c| puts c}
+# "ルビー".each_char {|c| puts c}
+
+# p Array.new(4){|i| i * 2}
+# a = [1, 2, 3]
+# p a.concat [4, 5]
+# p a.object_id
+# p a.insert(0, -1, 0)
+# p a.object_id
+# p a.unshift(-2)
+# p a.object_id
+# b = a + [11]
+# p b
+
+# a = [1, 2, 3]
+# a[0] = 0
+# a[3..6] = [4, 5, 6] #こえても以降はnilにはならないんだね。指定が足りない場合はないことになっているね
+# p a
+# a[3..5] = [3, 3, 3]
+# p a.fill("no")
+# p a.fill("yes", 4) #範囲指定だとその範囲を、単数指定だとそれ以降の配列すべてを指定した値に変えるっぽい
+# p a.fill(1..2){|index| index} #indexってなんけ…… #TODO
+
+# p a.replace([1, 2]) #配列の数に関わらず、そのまま全部とっかえる感じだね。で、idは変わらないと。
+
+# p a.at(4) #atは範囲指定はできないね。範囲を指定したい場合は[]でするしかない。単数はatメソッド
+# p a.values_at(1..2) #配列で返すためか、values_atは複数参照できるね。
+
+# p a.fetch(4){|n| "ERROR #{n}"}
+
+# p a.first(2) #引数を指定すれば、最初から引数番目までの数を返すよ。lastは最後から引数番目までを返すよ。
+
+a = [[1, 2], [2, 3], [3, 4], [4, 5]]
+p a.assoc(4)
+p a.rassoc(3)
