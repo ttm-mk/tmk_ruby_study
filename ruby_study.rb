@@ -339,5 +339,34 @@
 # p [1, 2, nil, 4].compact! #上記同様
 # p [[[1, 2], 3], [[4, 5], 6]].flatten
 # p [1, 2, 3].collect{|n| n ** 2} #mapと書き方は一緒でよさそうだね
-p [1, 2, 3, 4].shuffle #まじでランダムに配列
+# p [1, 2, 3, 4].shuffle #まじでランダムに配列
+
+# p [1, 2].product(["a", "b", "c"]) #文字列じゃないとエラーになるだわ
+# p [1, 2].zip(["a", "b", "c"], [3, 4]) #インデックスごとにまとめられる、はみ出たものは無視
+# p [1, 2] * 3 #きちんとスペースをあけること
+
+# p ["ルビー"].pack("p") #TODO!パックよくわからないな……
+
+# a = {"apple" => "fruit", "coffee" => "drink"}
+# a = Hash["apple", "fruit", "coffee", "drink"]
+# a.each do |name, name2|
+#   p name
+#   p name2
+# end
+# p a.class
+
+# a = Hash.new
+# p a["apple"]
+# a = Hash.new("NONE")
+# p a["apple"] #TODO!あまりよくわからないぞ……！？キーが存在しない場合の初期値は値の方ってことだよな？
+
+a = Hash.new{|hash, key| hash[key] = "NONE"}
+p a["apple"] #aがhashで、appleがkeyってことだよな？んで上記の条件で代入したのでnilになったと。
+p a.default = "Not exists"
+p a["coffee"]
+a.each do |name, name2|
+  p name
+  p name2
+end
+#coffeeどこいったん！？！？！？ｗｗｗｗ
 
