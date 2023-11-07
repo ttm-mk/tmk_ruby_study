@@ -360,13 +360,41 @@
 # a = Hash.new("NONE")
 # p a["apple"] #TODO!あまりよくわからないぞ……！？キーが存在しない場合の初期値は値の方ってことだよな？
 
-a = Hash.new{|hash, key| hash[key] = "NONE"}
-p a["apple"] #aがhashで、appleがkeyってことだよな？んで上記の条件で代入したのでnilになったと。
-p a.default = "Not exists"
-p a["coffee"]
-a.each do |name, name2|
-  p name
-  p name2
-end
+# a = Hash.new{|hash, key| hash[key] = "NONE"}
+# p a["apple"] #aがhashで、appleがkeyってことだよな？んで上記の条件で代入したのでnilになったと。
+# p a.default = "Not exists"
+# p a["coffee"]
+# a.each do |name, name2|
+#   p name
+#   p name2
+# end
 #coffeeどこいったん！？！？！？ｗｗｗｗ
 
+# p a["apple"]
+# p a.keys
+# p a.values
+
+# p a.values_at("apple", "coffee")
+
+# a = {1 => "a", 2 => "b", 3 => "c", 4 => "d"}
+# p a.fetch(7, "NONE") #キーがなかったら、二番目の引数の値を返すと。
+# p a.fetch(6){|key| key % 2 == 0}
+# p a.select{|key, value| key % 3 == 0} #ブロック専用メソッドかな
+# p a.find_all{|key, value| key % 3 == 0} #selectと返す値が違う、前者はハッシュ、これは配列で返すってよ。
+# a[5] = "f"
+# p a.delete(5)
+# p a.reject{|key, value| value == "b"} #わすれそうだった、Alt上下で単品移動…！！
+# p a
+# p a.replace({10 => "a", 20 => "z"}) #指定した値にまるまる中身が入れ替わってしまうね！
+# p a.shift
+# p a
+
+a = {"apple" => "foods", "coffee" => "drink"}
+
+p a.merge({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #同じキーは上書きされて、違う子は追加ってことかな？統合、だもんね。
+p a.merge({"orange" => "fruit", "tea" => "drink"}){|key, self_val, other_val| p self_val}
+#key =>キーのこと、self_val =>もともと入っている自身の値のこと、other_val =>新しく指定された値のこと(ここではりんごがフルーツってやつ)
+#ブロックでself_valと指定しているから、統合後はもともとの値を参照してねってことになるんだと思われ。
+p a.update({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #updateは上書きだから完全に後者がのこるわけですね。
+p a.invert #反対にするかつ値が一緒のものは逆にしたときに最初になる方が残るっぽい
+p a.clear #さよならハッシュの中身。
