@@ -389,12 +389,24 @@
 # p a.shift
 # p a
 
-a = {"apple" => "foods", "coffee" => "drink"}
+# a = {"apple" => "foods", "coffee" => "drink"}
 
-p a.merge({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #同じキーは上書きされて、違う子は追加ってことかな？統合、だもんね。
-p a.merge({"orange" => "fruit", "tea" => "drink"}){|key, self_val, other_val| p self_val}
-#key =>キーのこと、self_val =>もともと入っている自身の値のこと、other_val =>新しく指定された値のこと(ここではりんごがフルーツってやつ)
-#ブロックでself_valと指定しているから、統合後はもともとの値を参照してねってことになるんだと思われ。
-p a.update({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #updateは上書きだから完全に後者がのこるわけですね。
-p a.invert #反対にするかつ値が一緒のものは逆にしたときに最初になる方が残るっぽい
-p a.clear #さよならハッシュの中身。
+# p a.merge({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #同じキーは上書きされて、違う子は追加ってことかな？統合、だもんね。
+# p a.merge({"orange" => "fruit", "tea" => "drink"}){|key, self_val, other_val| p self_val}
+# #key =>キーのこと、self_val =>もともと入っている自身の値のこと、other_val =>新しく指定された値のこと(ここではりんごがフルーツってやつ)
+# #ブロックでself_valと指定しているから、統合後はもともとの値を参照してねってことになるんだと思われ。
+# p a.update({"orange" => "fruit", "tea" => "drink", "apple" => "fruit"}) #updateは上書きだから完全に後者がのこるわけですね。
+# p a.invert #反対にするかつ値が一緒のものは逆にしたときに最初になる方が残るっぽい
+# p a.clear #さよならハッシュの中身。
+
+# p a.has_key?("apple") #引数はひとつまでですなｗ
+# p a.has_value?("drink")
+# p a.value?("drink")
+
+# a.each_pair{|key, value| puts "#{key} => #{value}"} #eachでもeach_pairでも結果は一緒だね。書き換えるだけ
+# a.each_key{|key| puts "key: #{key}"} #keyとvalueは名前だけ変えれば返す値が変わるだけですな。
+
+a = {4 => "a", 3 => "b", 2 => "c", 1 => "d"}
+p a.sort #ソートは整列、並べ替えってことなんだな。たまにほんとに日本語訳必要…日本語にならんかね？？？
+p a.sort{|a, b| a[1] <=> b[1]} #TODO!ちょっとまって
+p a.to_a #array!!!!!!!!のa。
