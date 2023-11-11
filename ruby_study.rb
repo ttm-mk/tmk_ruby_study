@@ -406,11 +406,13 @@
 # a.each_pair{|key, value| puts "#{key} => #{value}"} #eachでもeach_pairでも結果は一緒だね。書き換えるだけ
 # a.each_key{|key| puts "key: #{key}"} #keyとvalueは名前だけ変えれば返す値が変わるだけですな。
 
-a = {4 => "a", 3 => "b", 2 => "c", 1 => "d"}
-p a.sort #ソートは整列、並べ替えってことなんだな。たまにほんとに日本語訳必要…日本語にならんかね？？？
-p a.sort{|a, b| a[1] <=> b[1]} #TODO!ちょっとまって
-p a.to_a #array!!!!!!!!のa。
+# a = {4 => "a", 3 => "b", 2 => "c", 1 => "d"}
+# p a.sort #ソートは整列、並べ替えってことなんだな。たまにほんとに日本語訳必要…日本語にならんかね？？？
+# p a.sort{|a, b| a[1] <=> b[1]} #TODO!ちょっとまって
+# p a.to_a #array!!!!!!!!のa。
 
-#シンボルって、ゲームの主人公の名前（変更不可）の場合に使えそうだなって思う。
+# #シンボルって、ゲームの主人公の名前（変更不可）の場合に使えそうだなって思う。
 
-p :foo.to_s
+# p :foo.to_s
+
+p File.open('README.md'){|file| file.mtime}
