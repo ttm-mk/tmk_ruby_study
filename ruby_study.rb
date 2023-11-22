@@ -415,4 +415,53 @@
 
 # p :foo.to_s
 
-p File.open('README.md'){|file| file.mtime}
+# p File.open('README.md'){|file| file.mtime}
+
+#   x = 0
+# def hoge
+#   (1...5).each do |i|
+#     x += 1
+#   end
+#   puts x
+# end
+
+# hoge
+
+# begin
+#   puts 1+"2"
+# rescue
+#   puts "Error."
+# rescue TypeError
+#   puts "TypeError."
+# ensure
+#   puts "Ensure."
+# end
+
+# def foo(*a)
+#   p a
+# end
+
+# foo(1, 2, 3)
+
+# class Hoge
+#   attr_reader :message #アクセッサメソッドをいれないとそもそも他のクラスで使えないのか。スーパークラスでもだめなんね。
+#   def initialize
+#     @message = "Hello."
+#   end
+# end
+
+# class Piyo < Hoge
+#   def initialize
+#     @message = "Hi."
+#     super
+#   end
+# end
+
+# puts Piyo.new.message
+
+def area r
+  include Math
+  return r * r * PI #とここにMath::PIとする、か～～～
+end
+
+p area(1)
