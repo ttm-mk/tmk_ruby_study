@@ -480,28 +480,83 @@
 
 # s.greet
 
-class Employee #TODO!!!!!
-  attr_reader :id #外でも読めるようにするやつ
-  attr_accessor :name #読んだり書いたりできるやつ
-  
-  def initialize id, name #最初にやることリスト。
-    @id = id
-    @name = name
-  end
-  
-  def to_s #String表記の時に、この形で表記たのんますっていってるのか。
-    return "#{@id}:#{@name}"
-  end
-  
-  def <=> other #これが比較演算子のオーバーライド。上書き再定義ってことか。なる。
-    return self.id <=> other.id #sortするときに<=>が必要なのはわかったけど、selfはどれでotherがどれのことかわからんちん。
-  end
-  
-end
+# class Employee #TODO!!!!!
+#   attr_reader :id #外でも読めるようにするやつ
+#   attr_accessor :name #読んだり書いたりできるやつ
 
-employees = [] #配列をつくります
-employees << Employee.new("3", "Tanaka") #たなかさんをいれます
-employees << Employee.new("1", "Suzuki") #すずきさんをいれます
-employees << Employee.new("2", "Sato") #さとうさんをいれます
-employees.sort! #ならびかえよ！
-employees.each do |employee| puts employee end #配列を配置してください。
+#   def initialize id, name #最初にやることリスト。
+#     @id = id
+#     @name = name
+#   end
+
+#   def to_s #String表記の時に、この形で表記たのんますっていってるのか。
+#     return "#{@id}:#{@name}"
+#   end
+
+#   def <=> other #これが比較演算子のオーバーライド。上書き再定義ってことか。なる。
+#     return self.id <=> other.id #sortするときに<=>が必要なのはわかったけど、selfはどれでotherがどれのことかわからんちん。
+#   end
+
+# end
+
+# employees = [] #配列をつくります
+# employees << Employee.new("3", "Tanaka") #たなかさんをいれます
+# employees << Employee.new("1", "Suzuki") #すずきさんをいれます
+# employees << Employee.new("2", "Sato") #さとうさんをいれます
+# employees.sort! #ならびかえよ！
+# employees.each do |employee| puts employee end #配列を配置してください。
+
+# a = [1, 2, 3, 4]
+# b = [1, 3,  5, 7]
+# c = a & b
+# c.each {|i| print i, " "} #printは改行しない。joinは使えなかったな。integerだからだったか？
+
+
+# a = [1, 2, 3, 4]
+# a[0...-1].each do |i| print i, " " end
+
+# a1=%w(a b)
+# a2=%w(x y)
+# a3=a2.zip(a1)
+# p a3.first
+
+# a = [1, 2, 3, 4, 5]
+# p a.slice(1, 3)
+
+# a = "abc"
+# b = "abc"
+
+# print a.eql? b #文字と型が一緒だからtrue
+# print a.equal? b #idが違うからfalse
+# print a == b #一緒の形してるからtrue
+
+# s = <<"EOB" #TODO!わからん！！！！！！
+# Hello,
+# Ruby
+# World.
+# EOB
+
+# p s
+
+# s1 = "Hoge"
+# s2 = "Fuga"
+# s1.concat(s2) #くっつけちゃうやつ？
+# s1.chop #最後の１文字をちょんぱするやつ
+# s1.chomp
+# s1 + s2
+# puts s1
+
+# s = "123456789"
+# p s[1, 4] #よくよくみたら文字列を、配列内から取り出すみたいな動きをさせてるんだよね。
+
+# member = [10, "Tanaka"]
+# print "ID:%2d Name:%s" %member
+
+# h = {a: 1, b: 2, c: 3}
+# h = Hash[:a, 1, :b, 2, :c, 3]
+# h = {a: 1, b: 2, c: 3}
+# p h
+
+t = Time.gm(1991, 1, 25)
+puts t.strftime("%Y/%m/%d")
+
