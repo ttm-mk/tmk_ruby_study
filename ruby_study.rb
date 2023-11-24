@@ -459,9 +459,49 @@
 
 # puts Piyo.new.message
 
-def area r
-  include Math
-  return r * r * PI #とここにMath::PIとする、か～～～
+# def area r
+#   include Math
+#   return r * r * PI #とここにMath::PIとする、か～～～
+# end
+
+# p area(1)
+
+# s = "Hello"
+
+# def s.greet
+#   puts "Hi!!!!!!!"
+# end
+
+# class String
+#   def greet
+#     puts "Hellllllooooooo"
+#   end
+# end
+
+# s.greet
+
+class Employee #TODO!!!!!
+  attr_reader :id #外でも読めるようにするやつ
+  attr_accessor :name #読んだり書いたりできるやつ
+  
+  def initialize id, name #最初にやることリスト。
+    @id = id
+    @name = name
+  end
+  
+  def to_s #String表記の時に、この形で表記たのんますっていってるのか。
+    return "#{@id}:#{@name}"
+  end
+  
+  def <=> other #これが比較演算子のオーバーライド。上書き再定義ってことか。なる。
+    return self.id <=> other.id #sortするときに<=>が必要なのはわかったけど、selfはどれでotherがどれのことかわからんちん。
+  end
+  
 end
 
-p area(1)
+employees = [] #配列をつくります
+employees << Employee.new("3", "Tanaka") #たなかさんをいれます
+employees << Employee.new("1", "Suzuki") #すずきさんをいれます
+employees << Employee.new("2", "Sato") #さとうさんをいれます
+employees.sort! #ならびかえよ！
+employees.each do |employee| puts employee end #配列を配置してください。
